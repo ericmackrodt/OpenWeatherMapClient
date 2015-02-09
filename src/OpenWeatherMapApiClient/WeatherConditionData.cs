@@ -10,7 +10,7 @@ namespace OpenWeatherMapApiClient
     public class WeatherConditionData
     {
         [DataMember(Name = "id")]
-        public int Id { get; set; }
+        public WeatherConditionCode Id { get; set; }
 
         [DataMember(Name = "main")]
         public string Main { get; set; }
