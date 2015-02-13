@@ -11,17 +11,17 @@ namespace OpenWeatherMapApiClient
 {
     public class OpenWeatherMapClient : IOpenWeatherMapClient
     {
-        public async Task<CurrentWeatherData> GetWeather(string query, Unit unit = Unit.Imperial)
+        public async Task<CurrentWeatherData> GetWeather(string query, Units unit = Units.Imperial)
         {
             return await GetRequest<CurrentWeatherData>("weather", QueryHelper.BuildQueryString(new { q = query, units = unit.ToString().ToLower() }));
         }
 
-        public async Task<CurrentWeatherData> GetWeather(int id, Unit unit = Unit.Imperial)
+        public async Task<CurrentWeatherData> GetWeather(int id, Units unit = Units.Imperial)
         {
             return await GetRequest<CurrentWeatherData>("weather", QueryHelper.BuildQueryString(new { id = id, units = unit.ToString().ToLower() }));
         }
 
-        public async Task<CurrentWeatherData> GetWeather(double lat, double lon, Unit unit = Unit.Imperial)
+        public async Task<CurrentWeatherData> GetWeather(double lat, double lon, Units unit = Units.Imperial)
         {
             return await GetRequest<CurrentWeatherData>("weather", QueryHelper.BuildQueryString(new { lat = lat, lon = lon, units = unit.ToString().ToLower() }));
         }

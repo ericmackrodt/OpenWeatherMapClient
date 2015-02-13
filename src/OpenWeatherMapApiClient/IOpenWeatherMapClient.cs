@@ -8,8 +8,8 @@ namespace OpenWeatherMapApiClient
 {
     public interface IOpenWeatherMapClient
     {
-        Task<CurrentWeatherData> GetWeather(string query, Unit unit = Unit.Imperial);
-        Task<CurrentWeatherData> GetWeather(int id, Unit unit = Unit.Imperial);
-        Task<CurrentWeatherData> GetWeather(double lat, double lng, Unit unit = Unit.Imperial);
+        Task<CurrentWeatherData> GetWeather(string query, Units unit = Units.Imperial);
+        Task<CurrentWeatherData> GetWeather(int id, Units unit = Units.Imperial);
+        Task<CurrentWeatherData> GetWeather(double lat, double lng, Units unit = Units.Imperial);
     }
 }

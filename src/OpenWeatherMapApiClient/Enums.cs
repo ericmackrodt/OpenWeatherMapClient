@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OpenWeatherMapApiClient
 {
-    public enum Unit
+    public enum Units
     {
-        Metric,
-        Imperial
+        Metric = 0,
+        Imperial = 1
     }
 
     public enum WeatherConditionCode
