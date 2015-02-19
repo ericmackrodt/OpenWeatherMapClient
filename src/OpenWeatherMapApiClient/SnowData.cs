@@ -10,6 +10,6 @@ namespace OpenWeatherMapApiClient
     public class SnowData
     {
         [DataMember(Name = "3h")]
-        public int In3h { get; set; }
+        public double In3h { get; set; }
     }
 }
