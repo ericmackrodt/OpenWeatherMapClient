@@ -11,6 +11,13 @@ namespace OpenWeatherMapApiClient
 {
     public class OpenWeatherMapClient : IOpenWeatherMapClient
     {
+        private IOpenWeatherMapSettings _settings;
+
+        public OpenWeatherMapClient(IOpenWeatherMapSettings settings)
+        {
+            _settings = settings;
+        }
+
         public async Task<CurrentWeatherData> GetWeather(string query, Units unit = Units.Imperial)
         {
             return await GetRequest<CurrentWeatherData>("weather", QueryHelper.BuildQueryString(new { q = query, units = unit.ToString().ToLower() }));
@@ -29,7 +36,9 @@ namespace OpenWeatherMapApiClient
         private async Task<T> GetRequest<T>(string endpoint, string queryString)
         {
             var cli = new HttpClient();
+            //cli.DefaultRequestHeaders.Add("x-api-key", _settings.ApiKey);
             var data = await cli.GetAsync(QueryHelper.BuildRequestUrl(ApiConstants.BaseUrl, endpoint, queryString));
+            data.EnsureSuccessStatusCode();
             var weatherJson = await data.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(weatherJson);
         }

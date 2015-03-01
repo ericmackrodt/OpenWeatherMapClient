@@ -42,6 +42,7 @@
     <Compile Include="CoordinatesData.cs" />
     <Compile Include="CurrentWeatherData.cs" />
     <Compile Include="IOpenWeatherMapClient.cs" />
+    <Compile Include="IOpenWeatherMapSettings.cs" />
     <Compile Include="MainData.cs" />
     <Compile Include="OpenWeatherMapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
