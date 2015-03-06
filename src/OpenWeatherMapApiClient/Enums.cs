@@ -87,7 +87,7 @@ namespace OpenWeatherMapApiClient
         Cold                            = 903,
         Hot                             = 904,
         Windy                           = 905,
-        hail                            = 906,
+        Hail                            = 906,
 
         //ADDITIONAL
         Calm                            = 951,
